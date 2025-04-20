@@ -57,7 +57,7 @@ module.exports = [
 
 ## Examples
 
-### Incorrect (Reported as Errors):
+### ❌ Incorrect (Reported as Errors):
 
 ```javascript
 // className is not the last argument
@@ -68,7 +68,7 @@ twMerge(className, "base");
 // Error: 'className' must be the last argument of twMerge
 ```
 
-### Correct (Passes Linting):
+### ✅Correct (Passes Linting):
 
 ```javascript
 // className is the last argument
