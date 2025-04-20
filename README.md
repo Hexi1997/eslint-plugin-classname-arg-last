@@ -43,10 +43,13 @@ Example `.eslintrc.json`:
 For ESLint v9, use the flat config format in an `eslint.config.js` file.
 
 ```javascript
-module.exports = [
+// eslint.config.js (ESM)
+import classnameArgLast from "eslint-plugin-classname-arg-last";
+
+export default [
   {
     plugins: {
-      "classname-arg-last": require("eslint-plugin-classname-arg-last"),
+      "classname-arg-last": classnameArgLast,
     },
     rules: {
       "classname-arg-last/classname-arg-last": "error",
