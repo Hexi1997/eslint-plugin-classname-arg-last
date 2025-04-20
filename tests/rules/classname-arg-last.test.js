@@ -4,7 +4,7 @@ const rule = require("../../lib/rules/classname-arg-last");
 // Map Mocha's after to RuleTester.afterAll
 RuleTester.afterAll = require("mocha").after;
 
-describe("classname-last", () => {
+describe("classname-arg-last", () => {
   const ruleTester = new RuleTester({
     languageOptions: {
       ecmaVersion: 2020,
@@ -13,9 +13,10 @@ describe("classname-last", () => {
   });
 
   it("should handle valid and invalid cases correctly", () => {
-    ruleTester.run("classname-last", rule, {
+    ruleTester.run("classname-arg-last", rule, {
       valid: [
         "cn('base', 'conditional', className);",
+        "cn('base', 'conditional', props.className);",
         "twMerge('base', className);",
         "cn('base');",
         "twMerge();",
@@ -37,6 +38,15 @@ describe("classname-last", () => {
             {
               message: "'className' must be the last argument of twMerge",
               type: "Identifier",
+            },
+          ],
+        },
+        {
+          code: "cn(props.className, 'base');",
+          errors: [
+            {
+              message: "'className' must be the last argument of cn",
+              type: "MemberExpression",
             },
           ],
         },
