@@ -25,6 +25,7 @@ describe("classname-arg-last", () => {
       invalid: [
         {
           code: "cn('base', className, 'conditional');",
+          output: "cn('base', 'conditional', className);", // ✅ autofix result
           errors: [
             {
               message: "'className' must be the last argument of cn",
@@ -34,6 +35,7 @@ describe("classname-arg-last", () => {
         },
         {
           code: "twMerge(className, 'base');",
+          output: "twMerge('base', className);", // ✅ autofix result
           errors: [
             {
               message: "'className' must be the last argument of twMerge",
@@ -43,6 +45,7 @@ describe("classname-arg-last", () => {
         },
         {
           code: "cn(props.className, 'base');",
+          output: "cn('base', props.className);", // ✅ autofix result
           errors: [
             {
               message: "'className' must be the last argument of cn",

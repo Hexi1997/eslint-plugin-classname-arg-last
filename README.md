@@ -31,9 +31,9 @@ Example `.eslintrc.json`:
 
 ```json
 {
-  "plugins": ["eslint-plugin-classname-arg-last"],
+  "plugins": ["classname-arg-last"],
   "rules": {
-    "eslint-plugin-classname-arg-last/classname-arg-last": "error"
+    "classname-arg-last/classname-arg-last": "error"
   }
 }
 ```
