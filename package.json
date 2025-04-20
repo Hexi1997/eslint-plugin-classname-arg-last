@@ -1,0 +1,29 @@
+{
+  "name": "eslint-plugin-classname-arg-last",
+  "version": "1.0.0",
+  "description": "ESLint plugin to ensure className is the last argument in cn or tw-merge calls",
+  "main": "lib/index.js",
+  "peerDependencies": {
+    "eslint": "^7.0.0 || ^8.0.0 || ^9.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/rule-tester": "^8.28.0",
+    "eslint": "^9.0.0",
+    "mocha": "^11.1.0"
+  },
+  "scripts": {
+    "test": "mocha tests/rules/*.test.js"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-rule",
+    "tailwind",
+    "className"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hexi1997/eslint-plugin-classname-arg-last"
+  }
+}
