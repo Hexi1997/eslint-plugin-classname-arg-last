@@ -17,6 +17,7 @@ describe("classname-arg-last", () => {
       valid: [
         "cn('base', 'conditional', className);",
         "cn('base', 'conditional', props.className);",
+        "cn('base', 'conditional', prop.className);",
         "twMerge('base', className);",
         "cn('base');",
         "twMerge();",
@@ -46,6 +47,16 @@ describe("classname-arg-last", () => {
         {
           code: "cn(props.className, 'base');",
           output: "cn('base', props.className);", // ✅ autofix result
+          errors: [
+            {
+              message: "'className' must be the last argument of cn",
+              type: "MemberExpression",
+            },
+          ],
+        },
+        {
+          code: "cn(data.className, 'base');",
+          output: "cn('base', data.className);", // ✅ autofix result
           errors: [
             {
               message: "'className' must be the last argument of cn",

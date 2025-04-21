@@ -65,6 +65,7 @@ export default [
 ```javascript
 // className is not the last argument
 cn("base", className, "conditional");
+cn(props.className, "conditional");
 // Error: 'className' must be the last argument of cn
 
 twMerge(className, "base");
@@ -76,6 +77,8 @@ twMerge(className, "base");
 ```javascript
 // className is the last argument
 cn("base", "conditional", className);
+cn("base", "conditional", props.className);
+cn("base", "conditional", data.className);
 twMerge("base", className);
 
 // No className, so rule does not apply
